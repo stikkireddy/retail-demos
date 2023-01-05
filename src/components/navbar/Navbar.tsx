@@ -7,16 +7,18 @@ import { motion } from "framer-motion";
 
 export const Navbar = () => {
     // const transition =
-    return <AppBar position="sticky">
+    return <AppBar position="sticky"
+    style={{backgroundColor: "#12262e"}}>
         <Toolbar variant="dense">
-            <Link to={"/"} style={{ textDecoration: 'none', color: "white" }}>
-                <SvgIcon>
-
+            <Link to={"/"} style={{ textDecoration: 'none'}}>
+                <SvgIcon style={{height: 28, width: 28, color: "red"}}>
                     <motion.path
-                        fill="transparent"
-                        strokeWidth="0.5"
+                        // fill="transparent"
+                        strokeWidth="1"
+                        transform="scale(1)"
                         stroke="rgba(255, 255, 255, 0.69)"
                         strokeLinecap="round"
+                        color="red"
                         initial={{ pathLength: 0 }}
                         animate={{ pathLength: 1 }}
                         transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse', ease: "easeInOut" }}

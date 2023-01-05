@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useEffect, useState} from 'react';
+import {useEffect, useLayoutEffect, useMemo, useRef, useState} from 'react';
 import {styled} from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -38,7 +38,8 @@ const defaultOptions = (animationData: any) => {
         animationData: animationData,
         // animationData,
         rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice"
+            preserveAspectRatio: "none"
+            // preserveAspectRatio: "xMidYMin slice"
         }
     }
 };
@@ -53,6 +54,8 @@ export type MainPageCardData = {
     learn_more_link: string
 }
 
+// @ts-ignore
+
 export default function MainPageCard(props: CardData) {
     const [data, setData] = useState(undefined);
     const getData = (file: string) => {
@@ -65,7 +68,7 @@ export default function MainPageCard(props: CardData) {
             }
         )
             .then((response) => {
-                console.log(response)
+                // console.log(response)
                 return response.json();
             })
             .catch((error) => {
@@ -74,10 +77,12 @@ export default function MainPageCard(props: CardData) {
                 }
             )
             .then((myJson) => {
-                console.log(myJson);
+                // console.log(myJson);
                 setData(myJson)
             });
     }
+
+
     useEffect(() => {
         getData(props.animationJsonFile)
     }, [])
@@ -107,33 +112,35 @@ export default function MainPageCard(props: CardData) {
                     <motion.div>
                         {data && <Lottie
                             options={defaultOptions(data)}
-                            // height={400}
-                            // width={400}
+                            height={320}
                         />}
                     </motion.div>
                 </CardContent>
             </CardActionArea>
-            <CardContent>
+            <CardContent style={{padding: 12}}>
                 <Typography variant="body2" color="text.secondary">
                     {props.description}
                 </Typography>
                 {/*<Stack direction="row" spacing={1} paddingTop={1}>*/}
 
-                <Typography variant="body2" color="text.secondary" marginTop={3}>
-                    {
-                        props.techTags.map((tag) => {
-                            return <Chip
-                                clickable
-                                label={tag.name}
-                                component={"a"}
-                                href={tag.link}
-                                target={"_blank"}
-                                color="primary"
-                                size={"small"}
-                                style={{margin: 2.5}}/>
-                        })
-                    }
-                    {
+                <Typography variant="body2" color="text.secondary" marginTop={1}>
+                    Technology: {
+                    props.techTags.map((tag) => {
+                        return <Chip
+                            clickable
+                            label={tag.name}
+                            component={"a"}
+                            href={tag.link}
+                            target={"_blank"}
+                            color="primary"
+                            size={"small"}
+                            style={{margin: 2.5}}/>
+                    })
+                }
+
+                </Typography>
+                <Typography variant="body2" color="text.secondary" marginTop={0}>
+                    Use Cases: {
                         props.useCaseTags.map((tag) => {
                             return <Chip
                                 clickable

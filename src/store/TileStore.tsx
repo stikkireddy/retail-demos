@@ -25,8 +25,8 @@ interface CardStore {
 export const useCards = create<CardStore>(() => ({
     cards: [
         {
-            title: "Shrimp and Chorizo Paella",
-            description: "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
+            title: "Outbreak Demo",
+            description: "This is a sample demo using gradio for plotting outbreak data.",
             linkRoute: "/test",
             iframeUrl: "https://dev.api.tsriharsha.io/gradio/outbreak/",
             animationJsonFile: "social-media-marketing.json",
@@ -35,6 +35,34 @@ export const useCards = create<CardStore>(() => ({
                     name: "SQL",
                     link: "https://www.databricks.com/product/databricks-sql",
                 }],
+            useCaseTags: [
+                {
+                    name: "Databricks",
+                    link: "https://www.databricks.com/",
+                }
+            ],
+            learnMoreLink: "https://google.com",
+        },
+        {
+            title: "Forecasting Demo",
+            description: "This is forecasting sales data using state of the art AI deep learning models.",
+            linkRoute: "/forecast",
+            iframeUrl: "https://dev.api.tsriharsha.io/gradio/nrf/forecast/",
+            animationJsonFile: "forecasting-animation.json",
+            techTags: [
+                {
+                    name: "SQL",
+                    link: "https://www.databricks.com/product/databricks-sql",
+                },
+                {
+                    name: "MLflow",
+                    link: "https://www.databricks.com/product/managed-mlflow",
+                },
+                {
+                    name: "Darts",
+                    link: "https://github.com/unit8co/darts",
+                }
+                ],
             useCaseTags: [
                 {
                     name: "Demand Forecasting",
