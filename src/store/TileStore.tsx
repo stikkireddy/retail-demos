@@ -44,7 +44,7 @@ export const useCards = create<CardStore>(() => ({
             learnMoreLink: "https://google.com",
         },
         {
-            title: "Forecasting Demo",
+            title: "Store Forecasting",
             description: "This is forecasting sales data using state of the art AI deep learning models.",
             linkRoute: "/forecast",
             iframeUrl: "https://dev.api.tsriharsha.io/gradio/nrf/forecast/",
@@ -70,6 +70,34 @@ export const useCards = create<CardStore>(() => ({
                 }
             ],
             learnMoreLink: "https://google.com",
+        },
+        {
+            title: "Anomaly Detection",
+            description: "This is realtime anomaly detection using Databricks serverless model serving.",
+            linkRoute: "/anomaly",
+            iframeUrl: "https://dev.api.tsriharsha.io/gradio/nrf/anomaly/",
+            animationJsonFile: "iot-anomaly-animation.json",
+            techTags: [
+                {
+                    name: "ML",
+                    link: "https://www.databricks.com/product/machine-learning",
+                },
+                {
+                    name: "Model Serving",
+                    link: "https://docs.databricks.com/mlflow/model-serving.html",
+                },
+                {
+                    name: "Tensorflow",
+                    link: "https://www.databricks.com/tensorflow",
+                }
+            ],
+            useCaseTags: [
+                {
+                    name: "Anomaly Detection",
+                    link: "https://www.databricks.com/glossary/anomaly-detection"
+                }
+            ],
+            learnMoreLink: "https://www.databricks.com/blog/2022/08/08/near-real-time-anomaly-detection-with-delta-live-tables-and-databricks-machine-learning.html",
         }
     ],
 }))

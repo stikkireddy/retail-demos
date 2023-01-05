@@ -87,7 +87,13 @@ export default function MainPageCard(props: CardData) {
         getData(props.animationJsonFile)
     }, [])
     return (
-        <Card>
+        // make cards all the same size with flex
+        <Card style={{
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between"
+        }}>
             <CardActionArea
                 component={Link} to={props.linkRoute}
             >
@@ -141,18 +147,18 @@ export default function MainPageCard(props: CardData) {
                 </Typography>
                 <Typography variant="body2" color="text.secondary" marginTop={0}>
                     Use Cases: {
-                        props.useCaseTags.map((tag) => {
-                            return <Chip
-                                clickable
-                                label={tag.name}
-                                component={"a"}
-                                target={"_blank"}
-                                href={tag.link}
-                                color="secondary"
-                                size={"small"}
-                                style={{margin: 2.5}}/>
-                        })
-                    }
+                    props.useCaseTags.map((tag) => {
+                        return <Chip
+                            clickable
+                            label={tag.name}
+                            component={"a"}
+                            target={"_blank"}
+                            href={tag.link}
+                            color="secondary"
+                            size={"small"}
+                            style={{margin: 2.5}}/>
+                    })
+                }
                 </Typography>
                 {/*</Stack>*/}
             </CardContent>

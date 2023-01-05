@@ -30,7 +30,7 @@ export const HomeGrid = () => {
         paddingBottom: 25
     }} fixed>
         <Grid container
-              alignItems="center"
+              // alignItems="center"
               spacing={{xs: 2, md: 3}}
         >
             {getGridItems(cards)}
