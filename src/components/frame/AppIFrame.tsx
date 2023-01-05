@@ -1,6 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import IframeResizer from "iframe-resizer-react";
-import {Container} from "@mui/material";
+import {Backdrop, CircularProgress, Container,} from "@mui/material";
 
 const IFrameDataAppStyleDefaults = {
     width: "10vw",
@@ -14,13 +14,28 @@ type IFrameData = {
     src: string
 }
 export const AppIFrame = (props: IFrameData) => {
+    const [loading, setLoading] = useState(true)
+
     return <Container style={{
         paddingTop: 25,
         paddingBottom: 25
     }} fixed>
+        {loading && (
+            <Backdrop
+                sx={{color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1}}
+                open={loading}>
+                <CircularProgress color="inherit"/>
+            </Backdrop>
+        )}
         <IframeResizer
-            checkOrigin={true}
+            checkOrigin={false}
             // log
+            onResized={(msg) => {
+                setLoading(false)
+            }}
+            onLoad={() => {
+                setLoading(false)
+            }}
             src={props.src}
             style={{...IFrameDataAppStyleDefaults}}
         />
