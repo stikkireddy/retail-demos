@@ -25,25 +25,30 @@ interface CardStore {
 
 export const useCards = create<CardStore>(() => ({
     cards: [
-        // {
-        //     title: "Outbreak Demo",
-        //     description: "This is a sample demo using gradio for plotting outbreak data.",
-        //     linkRoute: "/test",
-        //     iframeUrl: "https://dev.api.tsriharsha.io/gradio/outbreak/",
-        //     animationJsonFile: "social-media-marketing.json",
-        //     techTags: [
-        //         {
-        //             name: "SQL",
-        //             link: "https://www.databricks.com/product/databricks-sql",
-        //         }],
-        //     useCaseTags: [
-        //         {
-        //             name: "Databricks",
-        //             link: "https://www.databricks.com/",
-        //         }
-        //     ],
-        //     learnMoreLink: "https://google.com",
-        // },
+        {
+            title: "Lakehmon",
+            description: "This is a game walking you through lakehouse.",
+            linkRoute: "/lakehmon",
+            iframeUrl: "https://stikkireddy.github.io/lakehmon/#/",
+            animationJsonFile: "lakehmon-animation.json",
+            techTags: [
+                {
+                    name: "MLflow",
+                    link: "https://www.databricks.com/product/managed-mlflow",
+                },
+                {
+                    name: "BERT",
+                    link: "https://www.sbert.net/",
+                },
+                ],
+            useCaseTags: [
+                {
+                    name: "Recommender Systems",
+                    link: "https://www.databricks.com/solutions/accelerators/recommendation-engines",
+                }
+            ],
+            learnMoreLink: "https://www.databricks.com/blog/2022/10/31/welcome-haunted-lakehouse.html",
+        },
         {
             title: "Store Forecasting",
             description: "This is forecasting sales data using state of the art AI deep learning models.",

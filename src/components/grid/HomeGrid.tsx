@@ -5,7 +5,6 @@ import {Container} from "@mui/material";
 import {CardData, useCards} from "../../store/TileStore";
 
 
-
 const getGridItems = (cards: CardData[]) => {
     return cards.map(
         (cardData, index) => {
