@@ -147,8 +147,8 @@ export const useCards = create<CardStore>(() => ({
                     link: "https://www.databricks.com/product/databricks-sql",
                 },
                 {
-                    name: "Delta Sharing",
-                    link: "https://docs.databricks.com/mlflow/model-serving.html",
+                    name: "Serverless",
+                    link: "https://www.databricks.com/blog/2021/08/30/announcing-databricks-serverless-sql.html",
                 },
                 {
                     name: "Tableau",
@@ -179,8 +179,8 @@ export const useCards = create<CardStore>(() => ({
                     link: "https://www.databricks.com/product/databricks-sql",
                 },
                 {
-                    name: "Delta Sharing",
-                    link: "https://docs.databricks.com/mlflow/model-serving.html",
+                    name: "Serverless",
+                    link: "https://www.databricks.com/blog/2021/08/30/announcing-databricks-serverless-sql.html",
                 },
                 {
                     name: "Tableau",
@@ -198,6 +198,35 @@ export const useCards = create<CardStore>(() => ({
                 }
             ],
             learnMoreLink: "https://www.databricks.com/company/partners/consulting-and-si/partner-solutions",
+        },
+        {
+            title: "Data Sharing Anywhere",
+            description: "Share data securely to anyone, anywhere!",
+            linkRoute: "/delta-sharing",
+            iframeUrl: "https://dev.api.tsriharsha.io/gradio/nrf/delta-sharing/",
+            // iframeHeight:
+            animationJsonFile: "share-animation.json",
+            techTags: [
+                {
+                    name: "Delta Sharing",
+                    link: "https://www.databricks.com/product/delta-sharing",
+                },
+                {
+                    name: "Delta Lake",
+                    link: "https://delta.io/",
+                }
+            ],
+            useCaseTags: [
+                {
+                    name: "Data Marketplace",
+                    link: "https://www.databricks.com/blog/2022/06/28/introducing-databricks-marketplace-an-open-marketplace-for-all-data-and-ai-assets.html"
+                },
+                {
+                    name: "Open Data Sharing",
+                    link: "https://www.databricks.com/blog/2021/05/26/introducing-delta-sharing-an-open-protocol-for-secure-data-sharing.html"
+                }
+            ],
+            learnMoreLink: "https://www.databricks.com/discover/demos/deltasharing",
         }
     ].sort((a, b) => {
         const nameA = a.title.toUpperCase(); // ignore upper and lowercase

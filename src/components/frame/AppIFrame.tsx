@@ -33,7 +33,7 @@ export const AppIFrame = (props: IFrameData) => {
             checkOrigin={false}
             // log
             height={props.optionalHeight}
-            scrolling={true}
+            scrolling={!!(props.optionalHeight)}
             onResized={(msg) => {
                 setLoading(false)
             }}
