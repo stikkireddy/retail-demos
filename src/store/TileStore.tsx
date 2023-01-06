@@ -107,7 +107,7 @@ export const useCards = create<CardStore>(() => ({
         },
         {
             title: "Recipe Finder",
-            description: "This is realtime anomaly detection using Databricks serverless model serving.",
+            description: "Find recipes using images or description of the food.",
             linkRoute: "/recipe",
             iframeUrl: "https://avisoori-databricks.github.io/databricksrecipeai/",
             iframeHeight: 850,
