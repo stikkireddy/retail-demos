@@ -107,7 +107,7 @@ export const useCards = create<CardStore>(() => ({
         },
         {
             title: "Recipe Finder",
-            description: "Find recipes using images or description of the food.",
+            description: "Find new recipes with description or image of your favorite food.",
             linkRoute: "/recipe",
             iframeUrl: "https://avisoori-databricks.github.io/databricksrecipeai/",
             iframeHeight: 850,
