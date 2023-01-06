@@ -10,8 +10,9 @@ export type CardData = {
     title: string,
     description: string,
     linkRoute: string,
-    iframeUrl: string
+    iframeUrl?: string
     iframeHeight?: number,
+    tableauUrl?: string
     animationJsonFile: string,
     techTags: Tag[],
     useCaseTags: Tag[],
@@ -130,6 +131,74 @@ export const useCards = create<CardStore>(() => ({
                 {
                     name: "Image Based Search",
                     link: "https://www.databricks.com/blog/2022/11/08/theres-no-ai-pumpkin-pie-there-should-be-delivering-novel-application-experiences"
+                }
+            ],
+            learnMoreLink: "https://www.databricks.com/blog/2022/11/08/theres-no-ai-pumpkin-pie-there-should-be-delivering-novel-application-experiences",
+        },
+        {
+            title: "Retail Executive Dashboard",
+            description: "Executive summary of your retail business.",
+            linkRoute: "/dashboard-retailsummary",
+            tableauUrl: "https://public.tableau.com/views/LovelyticsRetailDashboards/RetailExecutiveSummary?:language=en-US&:display_count=n&:origin=viz_share_link",
+            // iframeUrl: "https://avisoori-databricks.github.io/databricksrecipeai/",
+            // iframeHeight: 850,
+            animationJsonFile: "dashboard-animation.json",
+            techTags: [
+                {
+                    name: "SQL",
+                    link: "https://www.databricks.com/product/databricks-sql",
+                },
+                {
+                    name: "Delta Sharing",
+                    link: "https://docs.databricks.com/mlflow/model-serving.html",
+                },
+                {
+                    name: "Tableau",
+                    link: "https://www.databricks.com/partners/tableau",
+                }
+            ],
+            useCaseTags: [
+                {
+                    name: "Brick Builder Solutions",
+                    link: "https://www.databricks.com/company/partners/consulting-and-si/partner-solutions"
+                },
+                {
+                    name: "Lovelytics",
+                    link: "https://lovelytics.com/partners/databricks/"
+                }
+            ],
+            learnMoreLink: "https://www.databricks.com/blog/2022/03/17/brickbuilder-solutions-partner-developed-industry-solutions-for-the-lakehouse.html",
+        },
+        {
+            title: "Purchase Analytics Dashboard",
+            description: "Purchase analytics for your consumers.",
+            linkRoute: "/dashboard-purchaseanalytics",
+            tableauUrl: "https://public.tableau.com/views/LovelyticsRetailDashboards/PurchaseAnalysis?:language=en-US&:display_count=n&:origin=viz_share_link",
+            // iframeUrl: "https://avisoori-databricks.github.io/databricksrecipeai/",
+            // iframeHeight: 850,
+            animationJsonFile: "purchase-analytics-animation.json",
+            techTags: [
+                {
+                    name: "SQL",
+                    link: "https://www.databricks.com/product/databricks-sql",
+                },
+                {
+                    name: "Delta Sharing",
+                    link: "https://docs.databricks.com/mlflow/model-serving.html",
+                },
+                {
+                    name: "Tableau",
+                    link: "https://www.databricks.com/partners/tableau",
+                }
+            ],
+            useCaseTags: [
+                {
+                    name: "Brick Builder Solutions",
+                    link: "https://www.databricks.com/company/partners/consulting-and-si/partner-solutions"
+                },
+                {
+                    name: "Lovelytics",
+                    link: "https://lovelytics.com/partners/databricks/"
                 }
             ],
             learnMoreLink: "https://www.databricks.com/blog/2022/11/08/theres-no-ai-pumpkin-pie-there-should-be-delivering-novel-application-experiences",
