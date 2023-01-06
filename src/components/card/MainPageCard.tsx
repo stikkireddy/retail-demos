@@ -9,10 +9,10 @@ import Typography from '@mui/material/Typography';
 import ShareIcon from '@mui/icons-material/Share';
 
 import Lottie from 'react-lottie'
-import {Button, CardActionArea, Chip} from "@mui/material";
+import {Button, CardActionArea, Chip, Skeleton} from "@mui/material";
 import {BrowserView} from "react-device-detect";
 import {Link} from "react-router-dom";
-import {motion} from "framer-motion"
+import {AnimatePresence, motion} from "framer-motion"
 import {CardData} from "../../store/TileStore";
 import {useQrModal} from "../qrmodal/QrModal";
 
@@ -29,14 +29,17 @@ const defaultOptions = (animationData: any) => {
     }
 };
 
-
+function sleep(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 // @ts-ignore
-
 export default function MainPageCard(props: CardData) {
     const [data, setData] = useState(undefined);
     const [handleOpen, modal] = useQrModal()
-    const getData = (file: string) => {
+    const [loading, setLoading] = useState(true)
+    const getData = async (file: string) => {
+        console.log("loading true")
         fetch(file
             , {
                 headers: {
@@ -52,12 +55,14 @@ export default function MainPageCard(props: CardData) {
             .catch((error) => {
                     console.log(error);
                     getData("social-media-marketing.json")
+                    setLoading(false)
                 }
             )
             .then((myJson) => {
                 // console.log(myJson);
                 setData(myJson)
-            });
+                setLoading(false)
+            })
     }
 
 
@@ -96,12 +101,35 @@ export default function MainPageCard(props: CardData) {
                         title={props.title}
                     />
                     <CardContent>
-                        <motion.div>
-                            {data && <Lottie
-                                options={defaultOptions(data)}
-                                height={320}
-                            />}
-                        </motion.div>
+                        <AnimatePresence exitBeforeEnter>
+                            {!loading ?
+                                <motion.div
+                                    key={"lotte"}
+                                    initial={{opacity: 0}}
+                                    animate={{opacity: 1}}
+                                    transition={{duration: 0.3}}
+                                    exit={{opacity: 0}}>
+                                    <Lottie
+                                        options={defaultOptions(data)}
+                                        height={320}/>
+                                </motion.div> : (<>
+                                        <motion.div
+                                            key={"skeleton"}
+                                            // initial={{opacity: 0}}
+                                            // animate={{opacity: 1}}
+                                            transition={{duration: 0.3,}}
+                                            exit={{opacity: 0}}>
+                                            {[...Array(7).keys()].map(() => {
+                                                return <Skeleton variant="rounded" height={40} style={{
+                                                    margin: 5
+                                                }}/>
+                                            })
+                                            }
+                                        </motion.div>
+                                    </>
+                                )
+                            }
+                        </AnimatePresence>
                     </CardContent>
                 </CardActionArea>
                 <CardContent style={{padding: 12}}>
