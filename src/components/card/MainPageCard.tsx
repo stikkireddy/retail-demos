@@ -1,11 +1,10 @@
 import * as React from 'react';
-import {useEffect, useLayoutEffect, useMemo, useRef, useState} from 'react';
-import {styled} from '@mui/material/styles';
+import {useEffect, useState} from 'react';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
-import IconButton, {IconButtonProps} from '@mui/material/IconButton';
+import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import ShareIcon from '@mui/icons-material/Share';
 
@@ -15,23 +14,7 @@ import {BrowserView} from "react-device-detect";
 import {Link} from "react-router-dom";
 import {motion} from "framer-motion"
 import {CardData} from "../../store/TileStore";
-import QRCode from "react-qr-code";
 import {useQrModal} from "../qrmodal/QrModal";
-
-interface ExpandMoreProps extends IconButtonProps {
-    expand: boolean;
-}
-
-const ExpandMore = styled((props: ExpandMoreProps) => {
-    const {expand, ...other} = props;
-    return <IconButton {...other} />;
-})(({theme, expand}) => ({
-    transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-        duration: theme.transitions.duration.shortest,
-    }),
-}));
 
 const defaultOptions = (animationData: any) => {
     return {
@@ -46,15 +29,7 @@ const defaultOptions = (animationData: any) => {
     }
 };
 
-export type MainPageCardData = {
-    title: string,
-    description: string,
-    link: string,
-    animation_json_file: string,
-    tech_tags: string[],
-    use_case_tags: string[],
-    learn_more_link: string
-}
+
 
 // @ts-ignore
 

@@ -12,6 +12,7 @@ const IFrameDataAppStyleDefaults = {
 
 type IFrameData = {
     src: string
+    optionalHeight?: number
 }
 export const AppIFrame = (props: IFrameData) => {
     const [loading, setLoading] = useState(true)
@@ -30,6 +31,8 @@ export const AppIFrame = (props: IFrameData) => {
         <IframeResizer
             checkOrigin={false}
             // log
+            height={props.optionalHeight}
+            scrolling={true}
             onResized={(msg) => {
                 setLoading(false)
             }}

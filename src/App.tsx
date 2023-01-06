@@ -21,7 +21,10 @@ function App() {
                     <Route path="/" element={<HomeGrid/>}/>
                     {cards.map((card) => {
                         return <Route path={card.linkRoute}
-                                      element={<AppIFrame src={card.iframeUrl}/>}/>
+                                      element={<AppIFrame
+                                          src={card.iframeUrl}
+                                          optionalHeight={card.iframeHeight}
+                                      />}/>
                     })}
 
                 </Routes>

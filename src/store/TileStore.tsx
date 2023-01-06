@@ -11,6 +11,7 @@ export type CardData = {
     description: string,
     linkRoute: string,
     iframeUrl: string
+    iframeHeight?: number,
     animationJsonFile: string,
     techTags: Tag[],
     useCaseTags: Tag[],
@@ -24,25 +25,25 @@ interface CardStore {
 
 export const useCards = create<CardStore>(() => ({
     cards: [
-        {
-            title: "Outbreak Demo",
-            description: "This is a sample demo using gradio for plotting outbreak data.",
-            linkRoute: "/test",
-            iframeUrl: "https://dev.api.tsriharsha.io/gradio/outbreak/",
-            animationJsonFile: "social-media-marketing.json",
-            techTags: [
-                {
-                    name: "SQL",
-                    link: "https://www.databricks.com/product/databricks-sql",
-                }],
-            useCaseTags: [
-                {
-                    name: "Databricks",
-                    link: "https://www.databricks.com/",
-                }
-            ],
-            learnMoreLink: "https://google.com",
-        },
+        // {
+        //     title: "Outbreak Demo",
+        //     description: "This is a sample demo using gradio for plotting outbreak data.",
+        //     linkRoute: "/test",
+        //     iframeUrl: "https://dev.api.tsriharsha.io/gradio/outbreak/",
+        //     animationJsonFile: "social-media-marketing.json",
+        //     techTags: [
+        //         {
+        //             name: "SQL",
+        //             link: "https://www.databricks.com/product/databricks-sql",
+        //         }],
+        //     useCaseTags: [
+        //         {
+        //             name: "Databricks",
+        //             link: "https://www.databricks.com/",
+        //         }
+        //     ],
+        //     learnMoreLink: "https://google.com",
+        // },
         {
             title: "Store Forecasting",
             description: "This is forecasting sales data using state of the art AI deep learning models.",
@@ -98,6 +99,47 @@ export const useCards = create<CardStore>(() => ({
                 }
             ],
             learnMoreLink: "https://www.databricks.com/blog/2022/08/08/near-real-time-anomaly-detection-with-delta-live-tables-and-databricks-machine-learning.html",
+        },
+        {
+            title: "Recipe Finder",
+            description: "This is realtime anomaly detection using Databricks serverless model serving.",
+            linkRoute: "/recipe",
+            iframeUrl: "https://avisoori-databricks.github.io/databricksrecipeai/",
+            iframeHeight: 850,
+            animationJsonFile: "recipe-finder-animation.json",
+            techTags: [
+                {
+                    name: "ML",
+                    link: "https://www.databricks.com/product/machine-learning",
+                },
+                {
+                    name: "Model Serving",
+                    link: "https://docs.databricks.com/mlflow/model-serving.html",
+                },
+                {
+                    name: "SBERT",
+                    link: "https://www.sbert.net/",
+                }
+            ],
+            useCaseTags: [
+                {
+                    name: "Image Based Search",
+                    link: "https://www.databricks.com/blog/2022/11/08/theres-no-ai-pumpkin-pie-there-should-be-delivering-novel-application-experiences"
+                }
+            ],
+            learnMoreLink: "https://www.databricks.com/blog/2022/11/08/theres-no-ai-pumpkin-pie-there-should-be-delivering-novel-application-experiences",
         }
-    ],
+    ].sort((a, b) => {
+        const nameA = a.title.toUpperCase(); // ignore upper and lowercase
+        const nameB = b.title.toUpperCase(); // ignore upper and lowercase
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+
+        // names must be equal
+        return 0;
+    }),
 }))
