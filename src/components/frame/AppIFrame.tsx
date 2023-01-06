@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import IframeResizer from "iframe-resizer-react";
 import {Backdrop, CircularProgress, Container,} from "@mui/material";
+import {AnimatedDatabricks} from "../navbar/Navbar";
 
 const IFrameDataAppStyleDefaults = {
     width: "10vw",
@@ -25,7 +26,7 @@ export const AppIFrame = (props: IFrameData) => {
             <Backdrop
                 sx={{color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1}}
                 open={loading}>
-                <CircularProgress color="inherit"/>
+                <AnimatedDatabricks height={90} width={90} scale={1}/>
             </Backdrop>
         )}
         <IframeResizer
