@@ -76,7 +76,7 @@ export const useCards = create<CardStore>(() => ({
                     link: "https://www.databricks.com/solutions/accelerators/demand-forecasting",
                 }
             ],
-            learnMoreLink: "https://google.com",
+            learnMoreLink: "https://www.databricks.com/blog/2022/02/09/jumpstart-your-machine-learning-forecasting-with-databricks-automl.html",
         },
         {
             title: "Anomaly Detection",
@@ -140,8 +140,6 @@ export const useCards = create<CardStore>(() => ({
             description: "Executive summary of your retail business.",
             linkRoute: "/dashboard-retailsummary",
             tableauUrl: "https://public.tableau.com/views/LovelyticsRetailDashboards/RetailExecutiveSummary?:language=en-US&:display_count=n&:origin=viz_share_link",
-            // iframeUrl: "https://avisoori-databricks.github.io/databricksrecipeai/",
-            // iframeHeight: 850,
             animationJsonFile: "dashboard-animation.json",
             techTags: [
                 {
@@ -159,7 +157,7 @@ export const useCards = create<CardStore>(() => ({
             ],
             useCaseTags: [
                 {
-                    name: "Brick Builder Solutions",
+                    name: "Brickbuilder Solutions",
                     link: "https://www.databricks.com/company/partners/consulting-and-si/partner-solutions"
                 },
                 {
@@ -167,15 +165,13 @@ export const useCards = create<CardStore>(() => ({
                     link: "https://lovelytics.com/partners/databricks/"
                 }
             ],
-            learnMoreLink: "https://www.databricks.com/blog/2022/03/17/brickbuilder-solutions-partner-developed-industry-solutions-for-the-lakehouse.html",
+            learnMoreLink: "https://www.databricks.com/company/partners/consulting-and-si/partner-solutions",
         },
         {
             title: "Purchase Analytics Dashboard",
             description: "Purchase analytics for your consumers.",
             linkRoute: "/dashboard-purchaseanalytics",
             tableauUrl: "https://public.tableau.com/views/LovelyticsRetailDashboards/PurchaseAnalysis?:language=en-US&:display_count=n&:origin=viz_share_link",
-            // iframeUrl: "https://avisoori-databricks.github.io/databricksrecipeai/",
-            // iframeHeight: 850,
             animationJsonFile: "purchase-analytics-animation.json",
             techTags: [
                 {
@@ -193,7 +189,7 @@ export const useCards = create<CardStore>(() => ({
             ],
             useCaseTags: [
                 {
-                    name: "Brick Builder Solutions",
+                    name: "Brickbuilder Solutions",
                     link: "https://www.databricks.com/company/partners/consulting-and-si/partner-solutions"
                 },
                 {
@@ -201,7 +197,7 @@ export const useCards = create<CardStore>(() => ({
                     link: "https://lovelytics.com/partners/databricks/"
                 }
             ],
-            learnMoreLink: "https://www.databricks.com/blog/2022/11/08/theres-no-ai-pumpkin-pie-there-should-be-delivering-novel-application-experiences",
+            learnMoreLink: "https://www.databricks.com/company/partners/consulting-and-si/partner-solutions",
         }
     ].sort((a, b) => {
         const nameA = a.title.toUpperCase(); // ignore upper and lowercase
