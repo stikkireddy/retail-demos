@@ -19,16 +19,18 @@ function App() {
             <div className="App">
                 <Navbar/>
                 <Routes>
-                    <Route path="/" element={<HomeGrid/>}/>
+                    <Route path="/" element={<HomeGrid/>} key={"home"} />
                     {cards.map((card) => {
                         if (card.iframeUrl) {
                             return <Route path={card.linkRoute}
+                                          key={card.title}
                                    element={<AppIFrame
                                        src={card.iframeUrl}
                                        optionalHeight={card.iframeHeight}
                                    />}/>
                         } else if (card.tableauUrl) {
                             return <Route path={card.linkRoute}
+                                          key={card.title}
                                    element={<Tableau
                                        src={card.tableauUrl}
                                    />}/>

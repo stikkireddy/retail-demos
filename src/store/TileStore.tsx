@@ -107,6 +107,34 @@ export const useCards = create<CardStore>(() => ({
             learnMoreLink: "https://www.databricks.com/blog/2022/08/08/near-real-time-anomaly-detection-with-delta-live-tables-and-databricks-machine-learning.html",
         },
         {
+            title: "Propensity to Purchase",
+            description: "Understand the likelihood a customer will be predisposed to purchasing a product based on prior actions.",
+            linkRoute: "/propensity-purchase",
+            iframeUrl: "https://dev.api.tsriharsha.io/gradio/nrf/purchase-propensity/",
+            animationJsonFile: "propensity-purchase-animation.json",
+            techTags: [
+                {
+                    name: "ML",
+                    link: "https://www.databricks.com/product/machine-learning",
+                },
+                {
+                    name: "Model Serving",
+                    link: "https://docs.databricks.com/mlflow/model-serving.html",
+                },
+                {
+                    name: "Scikit-Learn",
+                    link: "https://scikit-learn.org/stable/",
+                }
+            ],
+            useCaseTags: [
+                {
+                    name: "Propensity Scoring",
+                    link: "https://www.databricks.com/blog/2022/06/03/getting-started-with-personalization-through-propensity-scoring.html"
+                }
+            ],
+            learnMoreLink: "https://www.databricks.com/blog/2022/06/03/getting-started-with-personalization-through-propensity-scoring.html",
+        },
+        {
             title: "Recipe Finder",
             description: "Find new recipes with description or image of your favorite food.",
             linkRoute: "/recipe",

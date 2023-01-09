@@ -17,7 +17,8 @@ export const Tableau =(props: TableauData)=> {
         }} fixed> <TableauReport
             url={props.src}
             options={{
-                hideTabs: true
+                hideTabs: true,
+
             }}
             query="&:jsdebug=false&:toolbar=no"
         />
