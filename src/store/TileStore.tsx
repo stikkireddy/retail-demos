@@ -54,7 +54,7 @@ export const useCards = create<CardStore>(() => ({
             title: "Store Forecasting",
             description: "This is forecasting sales data using state of the art AI deep learning models.",
             linkRoute: "/forecast",
-            iframeUrl: "https://dev.api.tsriharsha.io/gradio/nrf/forecast/",
+            iframeUrl: "https://dev.railway.tsriharsha.io/gradio/nrf/forecast/",
             animationJsonFile: "forecasting-animation.json",
             techTags: [
                 {
@@ -82,7 +82,7 @@ export const useCards = create<CardStore>(() => ({
             title: "Anomaly Detection",
             description: "This is realtime anomaly detection using Databricks serverless model serving.",
             linkRoute: "/anomaly",
-            iframeUrl: "https://dev.api.tsriharsha.io/gradio/nrf/anomaly/",
+            iframeUrl: "https://dev.railway.tsriharsha.io/gradio/nrf/anomaly/",
             animationJsonFile: "iot-anomaly-animation.json",
             techTags: [
                 {
@@ -110,7 +110,7 @@ export const useCards = create<CardStore>(() => ({
             title: "Propensity to Purchase",
             description: "Understand the likelihood a customer will be predisposed to purchasing a product based on prior actions.",
             linkRoute: "/propensity-purchase",
-            iframeUrl: "https://dev.api.tsriharsha.io/gradio/nrf/purchase-propensity/",
+            iframeUrl: "https://dev.railway.tsriharsha.io/gradio/nrf/purchase-propensity/",
             animationJsonFile: "propensity-purchase-animation.json",
             techTags: [
                 {
@@ -231,7 +231,7 @@ export const useCards = create<CardStore>(() => ({
             title: "Data Sharing Anywhere",
             description: "Share data securely to anyone, anywhere!",
             linkRoute: "/delta-sharing",
-            iframeUrl: "https://dev.api.tsriharsha.io/gradio/nrf/delta-sharing/",
+            iframeUrl: "https://dev.railway.tsriharsha.io/gradio/nrf/delta-sharing/",
             // iframeHeight:
             animationJsonFile: "share-animation.json",
             techTags: [
