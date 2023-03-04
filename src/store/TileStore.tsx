@@ -228,7 +228,7 @@ export const useCards = create<CardStore>(() => ({
             learnMoreLink: "https://www.databricks.com/company/partners/consulting-and-si/partner-solutions",
         },
         {
-            title: "Data Sharing Anywhere",
+            title: "Data Sharing Explorer",
             description: "Share data securely to anyone, anywhere!",
             linkRoute: "/delta-sharing",
             iframeUrl: "https://dev.railway.tsriharsha.io/gradio/nrf/delta-sharing/",
@@ -255,7 +255,44 @@ export const useCards = create<CardStore>(() => ({
                 }
             ],
             learnMoreLink: "https://www.databricks.com/discover/demos/deltasharing",
-        }
+        },
+        {
+            title: "Delta Sharing Query Editor With Webassembly",
+            description: "Query a delta share using only your browser.",
+            linkRoute: "/delta-sharing-browser",
+            iframeUrl: "https://stikkireddy.github.io/delta-sharing-browser/",
+            iframeHeight: 850,
+            animationJsonFile: "data-sharing-animation.json",
+            techTags: [
+                {
+                    name: "Open Data Sharing",
+                    link: "https://www.databricks.com/blog/2021/05/26/introducing-delta-sharing-an-open-protocol-for-secure-data-sharing.html"
+                },
+                {
+                    name: "Delta Lake",
+                    link: "https://delta.io/",
+                },
+                {
+                    name: "Webassembly",
+                    link: "https://webassembly.org/",
+                },
+                {
+                    name: "DuckDB Wasm",
+                    link: "https://duckdb.org/2021/10/29/duckdb-wasm.html",
+                }
+            ],
+            useCaseTags: [
+                {
+                    name: "Data Marketplace",
+                    link: "https://www.databricks.com/blog/2022/06/28/introducing-databricks-marketplace-an-open-marketplace-for-all-data-and-ai-assets.html"
+                },
+                {
+                    name: "Open Data Sharing",
+                    link: "https://www.databricks.com/blog/2021/05/26/introducing-delta-sharing-an-open-protocol-for-secure-data-sharing.html"
+                }
+            ],
+            learnMoreLink: "https://www.databricks.com/discover/demos/deltasharing",
+        },
     ].sort((a, b) => {
         const nameA = a.title.toUpperCase(); // ignore upper and lowercase
         const nameB = b.title.toUpperCase(); // ignore upper and lowercase
